@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router";
 import App from "./App.tsx";
-import AdminPanel from "./admin/AdminPanel.tsx";
+import AdminPanel from "./admin/AdminPanel.js";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
