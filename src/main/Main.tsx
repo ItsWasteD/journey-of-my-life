@@ -20,7 +20,7 @@ export default function Main() {
 
 	return (
 		<>
-			<div ref={container}>
+			<div style={{ overflow: "hidden" }} ref={container}>
 				<div>Stop 1 Left</div>
 				<div>Stop 2 Right</div>
 				<div>Stop 3 Left</div>
