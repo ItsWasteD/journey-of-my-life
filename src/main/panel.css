@@ -2,6 +2,8 @@
 	margin: 0;
 	padding: 0;
 	width: 100vw;
-	height: 93vh;
+	height: 100vh;
 	max-width: 100%;
+	background-image: url("../assets/treasure_map_1.jpg");
+	background-attachment: fixed;
 }
