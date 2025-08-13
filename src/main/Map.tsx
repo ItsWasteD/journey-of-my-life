@@ -1,17 +1,15 @@
-import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Panel from "./Panel";
 import "./map.css";
+import { images } from "../assets/assets";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Main() {
-	const container = useRef(null);
-
-	useGSAP(() => {
+	/*useGSAP(() => {
 		gsap.set("#cross", { yPercent: "+=20" });
 
 		const tl = gsap.timeline({
@@ -19,10 +17,10 @@ export default function Main() {
 				trigger: "#cross",
 				markers: true,
 				start: "center 20%",
-				end: "1000vw top",
+				end: "top",
 				scrub: 1,
 				pin: true,
-				anticipatePin: 1,
+				//anticipatePin: 1,
 			},
 		});
 
@@ -33,12 +31,25 @@ export default function Main() {
 		})
 			.to("#cross", { x: "30vw", duration: 3, ease: "back.inOut" })
 			.to("#cross", { x: 0, duration: 2, ease: "power1.out" });
-	});
+	});*/
+
+	type ImageName = keyof typeof images;
+
+	const panels = Object.entries(images).map(
+		([name, { src, title }], index) => (
+			<Panel
+				key={name}
+				imageName={src as ImageName}
+				title={title}
+				index={index}
+			/>
+		)
+	);
 
 	return (
 		<>
 			<div id="map">
-				<img
+				{/*<img
 					id="cross"
 					src="src/assets/cross.png"
 					width={50}
@@ -46,9 +57,14 @@ export default function Main() {
 					style={{
 						transform: `rotate(${Math.random() * 90}deg)`,
 					}}
-				/>
-				{/*}<Panel color={"green"} title={"First"} />
-				<Panel color={"red"} title={"Second"} />{*/}
+				/>*/}
+				{panels}
+				<div
+					style={{
+						height: "20vh",
+						backgroundColor: "rgba(0,0,0,0.5)",
+					}}
+				></div>
 			</div>
 		</>
 	);
