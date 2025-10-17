@@ -1,6 +1,6 @@
 import cross from "./cross.png";
 import treasureMap from "./treasure_map_1.jpg";
-import image1 from "./fuji.jpg";
+import image1 from "./fuji_1.jpg";
 
 export const images = {
 	cross: { src: cross, title: "This is red cross" },
